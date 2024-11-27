@@ -39,7 +39,7 @@ class ClothingCard extends StatelessWidget {
           margin: const EdgeInsets.all(5.0),
           padding: const EdgeInsets.all(5.0),
           decoration: BoxDecoration(
-              border: Border.all(color: Colors.red.withOpacity(0.8), width: 2),
+              border: Border.all(color: Colors.indigo.withOpacity(0.8), width: 2),
               borderRadius: BorderRadius.circular(10)),
           child: ClothingData(image: image, name: name),
         ),

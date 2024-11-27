@@ -1,17 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:lab/models/clothing_item.dart';
-import 'package:lab/widgets/item_details.dart';
-import 'package:lab/widgets/item_title.dart';
+import 'package:lab/widgets/details/item_details.dart';
+import 'package:lab/widgets/details/item_details_title.dart';
 
-import '../widgets/detail_back_button.dart';
-import '../widgets/detail_data.dart';
+import '../widgets/details/detail_back_button.dart';
+import '../widgets/details/item_details_data.dart';
 
 class Details extends StatelessWidget {
   const Details({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final arguments = ModalRoute.of(context)!.settings.arguments as ClothingItem;
+    final arguments =
+        ModalRoute.of(context)!.settings.arguments as ClothingItem;
     return Scaffold(
       body: SingleChildScrollView(
         padding: EdgeInsets.only(top: MediaQuery.of(context).padding.top),
@@ -20,11 +21,14 @@ class Details extends StatelessWidget {
           children: [
             ItemDetails(image: arguments.img),
             ItemTitle(id: arguments.id, name: arguments.name),
-            DetailData(id: arguments.id),
+            DetailData(
+                id: arguments.id,
+                description: arguments.description,
+                price: arguments.price),
           ],
         ),
       ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.startFloat,
+      floatingActionButtonLocation: FloatingActionButtonLocation.startTop,
       floatingActionButton: const DetailBackButton(),
     );
   }

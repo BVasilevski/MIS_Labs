@@ -48,14 +48,7 @@ class _HomeState extends State<Home> {
     return Scaffold(
         appBar: AppBar(
           backgroundColor: Colors.blueAccent,
-          leading: IconButton(
-              onPressed: () {},
-              icon: const Icon(
-                Icons.menu,
-                color: Colors.white,
-                size: 24,
-              )),
-          title: const Text("Clothing Store App",
+          title: const Text("211165",
               style: TextStyle(
                   color: Colors.white,
                   fontSize: 32,
